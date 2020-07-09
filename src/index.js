@@ -4,25 +4,22 @@ import { RequestQueue } from './queue';
 /**
  * tokenLink
  * @param {Object} options
- * @param {function} options.onRefreshToken function to run when a new token is needed.
+ * @param {function} options.refreshToken function to run when a new token is needed.
  * @param {function} options.shouldRefresh function to run after a request to determine if we have to fetch a new token
  */
-export function tokenRefreshLink({ onRefreshToken, shouldRefresh }) {
+export function tokenRefreshLink({ refreshToken, shouldRefresh }) {
   const queue = new RequestQueue();
   let isGettingToken = false;
 
   const getNewToken = async () => {
     if (isGettingToken) return;
     isGettingToken = true;
-    let isRefreshed;
+    let isRefreshed = false;
     try {
-      await onRefreshToken();
+      await refreshToken();
       isRefreshed = true;
-    } catch (error) {
-      isRefreshed = false;
-    } finally {
-      isGettingToken = false;
-    }
+    } catch (error) {}
+    isGettingToken = false;
     queue.processItems(isRefreshed);
   };
 
