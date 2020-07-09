@@ -1,3 +1,4 @@
+import { Observable } from '@apollo/client';
 /**
  * A simple queue for holding a list of apollo queries that need to be retried or
  * were paused while waiting for token refresh.
