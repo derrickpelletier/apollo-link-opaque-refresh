@@ -1,4 +1,4 @@
-# apollo-link-opaque-refresh [![npm version](https://badge.fury.io/js/apollo-link-opaque-refresh.svg)](https://badge.fury.io/js/apollo-link-opaque-refresh)
+# apollo-link-opaque-refresh [![npm version](https://badge.fury.io/js/apollo-link-opaque-refresh.svg)](https://badge.fury.io/js/apollo-link-opaque-refresh) [![minzip](https://badgen.net/bundlephobia/minzip/apollo-link-opaque-refresh)](https://bundlephobia.com/result?p=apollo-link-opaque-refresh)
 
 [`npm i apollo-link-opaque-refresh`](https://www.npmjs.com/package/apollo-link-opaque-refresh)
 
