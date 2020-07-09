@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "Apollo Link for token refresh of JWT or Opaque tokens",
   "main": "lib/bundle.cjs.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/derrickpelletier/apollo-link-opaque-refresh.git"
+  },
   "scripts": {
     "build": "rollup -c"
   },
