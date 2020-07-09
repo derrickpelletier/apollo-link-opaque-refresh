@@ -1,6 +1,6 @@
 {
   "name": "apollo-link-opaque-refresh",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Apollo Link for token refresh of JWT or Opaque tokens",
   "main": "lib/bundle.cjs.js",
   "repository": {
