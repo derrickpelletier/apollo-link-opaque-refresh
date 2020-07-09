@@ -1,0 +1,15 @@
+{
+  "name": "apollo-link-opaque-refresh",
+  "version": "0.0.1",
+  "description": "Apollo Link for token refresh of JWT or Opaque tokens",
+  "main": "lib/bundle.cjs.js",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "author": "Derrick Pelletier",
+  "license": "MIT",
+  "devDependencies": {
+    "rollup": "^2.21.0",
+    "rollup-plugin-commonjs": "^10.1.0"
+  }
+}
