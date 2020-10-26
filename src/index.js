@@ -11,12 +11,12 @@ export function tokenRefreshLink({ refreshToken, shouldRefresh }) {
   const queue = new RequestQueue();
   let isGettingToken = false;
 
-  const getNewToken = async () => {
+  const getNewToken = async (operation) => {
     if (isGettingToken) return;
     isGettingToken = true;
     let isRefreshed = false;
     try {
-      await refreshToken();
+      await refreshToken({ operation });
       isRefreshed = true;
     } catch (error) {}
     isGettingToken = false;
@@ -63,7 +63,7 @@ export function tokenRefreshLink({ refreshToken, shouldRefresh }) {
               })
               .subscribe(observer);
 
-            if (!isGettingToken) getNewToken();
+            if (!isGettingToken) getNewToken(operation);
           },
           error: (networkError) => {
             if (!shouldRefresh({ operation, networkError })) {
@@ -78,7 +78,7 @@ export function tokenRefreshLink({ refreshToken, shouldRefresh }) {
                 observer.error(networkError);
               })
               .subscribe(observer);
-            if (!isGettingToken) getNewToken();
+            if (!isGettingToken) getNewToken(operation);
           },
           complete: () => {
             // only complete if we didn't queue up a retry
